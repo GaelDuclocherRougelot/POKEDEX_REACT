@@ -1,0 +1,39 @@
+@import '../../UI/Fonts.module.scss';
+@import '../../UI/Colors.module.scss';
+
+header {
+  width: 100vw;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid #555;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.7vw;
+    padding: 0;
+    color: rgb(212, 212, 212);
+    font-family: $font-roboto;
+    font-weight: 500;
+    li {
+      list-style-type: none;
+      margin: 2rem;
+      cursor: pointer;
+    }
+    
+  }
+}
+
+// --------------------------------Media queries ---------------------------
+@media (max-width: 900px) {
+  header {
+    ul {
+      font-size: 4vw;
+    }
+  }
+}
