@@ -3,6 +3,7 @@ import "./App.scss";
 import Header from "./components/Header/Header";
 import Pokemons from "./components/Pokemons/Pokemons";
 import { PokedexContext } from "./contexts/pokeContext";
+import Filters from "./components/Filters/Filters";
 
 function App() {
   const { pokedex, addToPokedex } = useContext(PokedexContext);
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Filters />
       <Pokemons />
     </div>
   );
