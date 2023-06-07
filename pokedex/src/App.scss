@@ -1,0 +1,8 @@
+@import './UI/Colors.module.scss';
+.App {
+  background-color: $color-background;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  font-display: column;
+}
