@@ -12,6 +12,7 @@
   color: white;
   padding-left: 2rem;
   transition: ease .5s;
+  transform: perspective(100px) rotateY(1deg);
 
   h2 {
     font-size: 2.5vw;

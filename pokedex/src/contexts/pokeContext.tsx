@@ -41,28 +41,39 @@ type Pokemon = {
   }[];
 }
 
-type Pokemons = Array<Pokemon>;
+export type Pokemons = Array<Pokemon>;
 
 type PokedexContextProps = {
   pokedex: Pokemons;
+  filtered_pokemons: Pokemons;
   addToPokedex: (pokemons: Pokemons) => void;
+  addFiltered_pokemons: (pokemons:Pokemons) => void;
 };
 
 export const PokedexContext = createContext<PokedexContextProps>({
   pokedex: [],
-  addToPokedex: () => void {}
+  filtered_pokemons: [],
+  addToPokedex: () => void {},
+  addFiltered_pokemons: () => void {}
 });
 
 export const PokedexProvider = ({ children }: PropsWithChildren) => {
   const [pokedex, setPokedex] = useState<Pokemons>([]);
+  const [filtered_pokemons, setFiltered_pokemons] = useState<Pokemons>([]);
 
   const addToPokedex = (pokemons: Pokemons) => {
     setPokedex(pokemons);
   };
 
+  const addFiltered_pokemons = (pokemons: Pokemons) => {
+    setFiltered_pokemons(pokemons);
+  };
+
   const pokedexContextValue: PokedexContextProps = {
     pokedex,
-    addToPokedex
+    addToPokedex,
+    filtered_pokemons,
+    addFiltered_pokemons
   };
 
   return (

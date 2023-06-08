@@ -12,7 +12,6 @@ function App() {
     fetch("https://pokebuildapi.fr/api/v1/pokemon")
       .then((response) => response.json())
       .then((data) => (pokedex.length === 0 ? addToPokedex(data) : null));
-    console.log(pokedex);
   }, [addToPokedex, pokedex]);
 
   return (
