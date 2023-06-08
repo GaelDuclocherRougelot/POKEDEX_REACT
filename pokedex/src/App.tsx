@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import "./App.scss";
+import styles from "./App.module.scss";
 import Header from "./components/Header/Header";
 import Pokemons from "./components/Pokemons/Pokemons";
 import { PokedexContext } from "./contexts/pokeContext";
@@ -16,10 +16,15 @@ function App() {
   }, [addToPokedex, pokedex]);
 
   return (
-    <div className="App">
+    <div className={`${styles.App}`}>
       <Header />
       <Filters />
-      <Pokemons />
+      {pokedex.length > 0 ? <Pokemons /> : <div className={`${styles.loader}`}>
+        <img src="/pokeball.png" alt="pokeball icon" />
+        <h3>Loading...</h3>
+      </div>
+      }
+
     </div>
   );
 }
